@@ -389,7 +389,7 @@ export const QUESTIONS: Question[] = [
             { "id": "b", "text": "more to the left." },
             { "id": "c", "text": "in the centre of the course." }
           ],
-          "correctAnswerId": "b"
+          "correctAnswerId": "a"
         },
         {
           "id": "q40",

@@ -44,6 +44,13 @@ export class UnlimitedComponent implements OnInit {
     this.shuffleChoices();
   }
 
+  previous() {
+    this.currentIndex = (this.currentIndex - 1 + this.questions.length) % this.questions.length;
+    this.showAnswer = false;
+    this.selectedAnswer = null;
+    this.shuffleChoices();
+  }
+
   navigateToHome() {
     this.router.navigate(['/']);
   }

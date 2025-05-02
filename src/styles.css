@@ -1,100 +1,91 @@
-/* You can add global styles to this file, and also import other style files */
-/* Center everything vertically and horizontally */
 .center-container {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    height: 100vh;  /* Centers vertically in the full screen */
-    text-align: left;
-  }
-  
-  /* Container for the buttons, split into two equal parts */
-  .button-row {
-    display: flex;
-    justify-content: space-between; /* Split the row into two parts */
-    width: 100%; /* Ensure the row takes the full width */
-    margin-top: 20px; /* Space between the question and the buttons */
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: center; /* Center the buttons horizontally within each container */
-    flex: 1; /* Equal space for both buttons */
-  }
-  
-  .start-button {
-    padding: 12px 24px;
-    font-size: 18px;
-    background-color: #4caf50;  /* Green button */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .start-button:hover {
-    background-color: #45a049;
-    transform: scale(1.05);  /* Slightly enlarges the button when hovered */
-  }
-  
-  .start-button:focus {
-    outline: none;
-  }
-  
-  .exit-button {
-    padding: 12px 24px;
-    font-size: 18px;
-    background-color: #f52b2b;  /* Red button */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .exit-button:hover {
-    background-color: #df4747;
-    transform: scale(1.05);  /* Slightly enlarges the button when hovered */
-  }
-  
-  .exit-button:focus {
-    outline: none;
-  }
-  
-  .choices-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .choice-label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-    padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .correct {
-    background-color: #c8e6c9; /* green */
-  }
-  
-  .wrong {
-    background-color: #ffcdd2; /* red */
-  }
-  
-  .selected {
-    background-color: #bbdefb; /* blue */
-  }
-  
-  .choice-label input[type="radio"] {
-    margin-right: 10px;
-  }
-  
-  .question-text {
-    font-weight: bold;
-    font-size: 24px; /* Adjust this value to your preference */
-    margin-bottom: 20px; /* Space between question and choices */
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center;
+  height: 100vh;
+  text-align: left;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.previous-button, .start-button, .exit-button {
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.previous-button {
+  background-color: #ff9800; /* Orange button */
+  color: white;
+}
+
+.previous-button:hover {
+  background-color: #fb8c00;
+  transform: scale(1.05);
+}
+
+.start-button {
+  background-color: #4caf50; /* Green button */
+  color: white;
+}
+
+.start-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.exit-button {
+  background-color: #f52b2b; /* Red button */
+  color: white;
+}
+
+.exit-button:hover {
+  background-color: #df4747;
+  transform: scale(1.05);
+}
+
+.choice-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.correct {
+  background-color: #c8e6c9; /* Green */
+}
+
+.wrong {
+  background-color: #ffcdd2; /* Red */
+}
+
+.selected {
+  background-color: #bbdefb; /* Blue */
+}
+
+.choice-label input[type="radio"] {
+  margin-right: 10px;
+}
+
+.question-text {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 20px;
+}

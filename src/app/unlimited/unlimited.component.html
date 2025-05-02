@@ -1,37 +1,39 @@
-<div class="center-container"> <!-- Add a wrapper div for centering -->
-    <ng-container *ngIf="questions.length">
-      <div [attr.id]="questions[currentIndex].id" class="question-container">
-        <p class="question-text">{{ currentIndex + 1 }}. {{ questions[currentIndex].question }}</p>
-        <img *ngIf="questions[currentIndex].image"
-             [src]="'/assets/' + questions[currentIndex].image + '.jpg'"
-             alt="Question Image" class="question-image" />
-        <div class="choices-list">
-          <label *ngFor="let choice of displayedChoices"
-                 [ngClass]="{
-                   'correct': showAnswer && choice.id === questions[currentIndex].correctAnswerId,
-                   'wrong': showAnswer && selectedAnswer === choice.id && choice.id !== questions[currentIndex].correctAnswerId,
-                   'selected': selectedAnswer === choice.id && !showAnswer
-                 }"
-                 class="choice-label">
-            <input type="radio"
-                   name="answer"
-                   [value]="choice.id"
-                   [disabled]="showAnswer"
-                   [checked]="selectedAnswer === choice.id"
-                   (change)="!showAnswer && selectAnswer(choice.id)" />
-            {{ choice.text }}
-          </label>
-        </div>
+<div class="center-container">
+  <ng-container *ngIf="questions.length">
+    <div [attr.id]="questions[currentIndex].id" class="question-container">
+      <p class="question-text">{{ currentIndex + 1 }}. {{ questions[currentIndex].question }}</p>
+      <img *ngIf="questions[currentIndex].image"
+           [src]="'assets/' + questions[currentIndex].image + '.jpg'"
+           alt="Question Image" class="question-image" />
+      <div class="choices-list">
+        <label *ngFor="let choice of displayedChoices"
+               [ngClass]="{
+                 'correct': showAnswer && choice.id === questions[currentIndex].correctAnswerId,
+                 'wrong': showAnswer && selectedAnswer === choice.id && choice.id !== questions[currentIndex].correctAnswerId,
+                 'selected': selectedAnswer === choice.id && !showAnswer
+               }"
+               class="choice-label">
+          <input type="radio"
+                 name="answer"
+                 [value]="choice.id"
+                 [disabled]="showAnswer"
+                 [checked]="selectedAnswer === choice.id"
+                 (change)="!showAnswer && selectAnswer(choice.id)" />
+          {{ choice.text }}
+        </label>
       </div>
-  
-      <div class="button-row">
-        <div class="button-container">
-          <button class="start-button" (click)="next()">Next</button>
-        </div>
-        <div class="button-container">
-          <button class="exit-button" (click)="navigateToHome()">Exit</button>
-        </div>
+    </div>
+
+    <div class="button-row">
+      <div class="button-container" *ngIf="currentIndex > 0">
+        <button class="previous-button" (click)="previous()">Previous</button>
       </div>
-    </ng-container>
-  </div>
-  
+      <div class="button-container">
+        <button class="start-button" (click)="next()">Next</button>
+      </div>
+      <div class="button-container">
+        <button class="exit-button" (click)="navigateToHome()">Exit</button>
+      </div>
+    </div>
+  </ng-container>
+</div>
