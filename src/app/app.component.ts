@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';  // Import RouterOutlet
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [RouterOutlet],  // Include RouterOutlet
+  template: `<router-outlet></router-outlet>`  // RouterOutlet for routing
 })
-export class AppComponent {
-  title = 'ftt';
-}
+export class AppComponent {}
